@@ -8,10 +8,16 @@ public class Student extends Person {
 	}
 
 	void setScore(float score) {
-		if (score >= 2 && score <= 6)
+		if (score >= 2 && score <= 6) {
 			this.score = score;
-		else
-			this.score = 2;
+		} else {
+			if (score < 2) {
+				this.score = 2;
+			}
+			if (score > 6) {
+				this.score = 6;
+			}
+		}
 	}
 
 	void showStudentInfo() {

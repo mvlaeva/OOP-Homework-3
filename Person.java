@@ -4,9 +4,9 @@ public class Person {
 	private int age;
 	private boolean isMale;
 
-	Person(String name, int age, boolean isMale) {
+	Person(final String name, int age, final boolean isMale) {
 		setName(name);
-		this.age = age;
+		setAge(age);
 		this.isMale = isMale;
 	}
 
@@ -22,7 +22,12 @@ public class Person {
 		if (age > 0 && age < 99) {
 			this.age = age;
 		} else {
-			this.age = 0;
+			if (age < 0) {
+				this.age = 0;
+			}
+			if (age > 99) {
+				this.age = 99;
+			}
 		}
 	}
 
